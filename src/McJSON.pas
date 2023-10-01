@@ -1,4 +1,4 @@
-﻿(*******************************************************************************
+(*******************************************************************************
 
   The MIT License (MIT)
 
@@ -199,7 +199,7 @@ type
 
   // TMcJsonItemEnumerator
   TMcJsonItemEnumerator = class
-  strict private
+  private
     fItem : TMcJsonItem;
     fIndex: Integer;
   public
@@ -490,7 +490,7 @@ begin
   except
     Error(SItemTypeConvValue, GetValueStr, fValue, 'integer');
   end;
-  // can´t convert, value type does not permit it
+  // can?t convert, value type does not permit it
   if (Aux = -1) then
     Error(SItemTypeConv, GetValueStr, 'integer');
   Result := Ans;
@@ -517,7 +517,7 @@ begin
   except
     Error(SItemTypeConvValue, GetValueStr, fValue, 'double');
   end;
-  // can´t convert, value type does not permit it
+  // can?t convert, value type does not permit it
   if (Aux = -1) then
     Error(SItemTypeConv, GetValueStr, 'double');
   Result := Ans;
@@ -553,7 +553,7 @@ begin
   except
     Error(SItemTypeConvValue, GetValueStr, fValue, 'boolean');
   end;
-  // can´t convert, value type does not permit it
+  // can?t convert, value type does not permit it
   if (Aux = -1) then
     Error(SItemTypeConv, GetValueStr, 'boolean');
   Result := Ans;
@@ -1846,10 +1846,13 @@ end;
 function McJsonEscapeString(const aStr: string; aEsc: TJEscapeType): string;
 var
   c: Char;
+  i: integer;
 begin
   Result := '';
-  for c in aStr do
+  //for c in aStr do
+  for i := 1 to Length(aStr) do
   begin
+    c := aStr[i];
     case c of
       ID_BACKSPACE: Result := Result + CHAR_ESCAPE + CHAR_BACKSPACE;
       ID_H_TAB    : Result := Result + CHAR_ESCAPE + CHAR_H_TAB    ;
