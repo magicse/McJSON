@@ -1,4 +1,4 @@
-# McJSON
+# McJSON Delphi 7
 A **Delphi / Lazarus / C++Builder** simple and small class for fast JSON parsing.
 
 * [Motivation](#motivation)
